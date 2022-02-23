@@ -1,0 +1,27 @@
+<h1><%= @place.name %></h1>
+
+<% if @place.posts != nil%>
+    <% for @post in @place.posts%>
+        <p>
+        <h3><%= @post.title%></h3>
+        </p>
+        <p>
+        <%= @post.posted_on%>
+        </p>
+        <p>
+        <%= @post.description%>
+        </p>
+        <br>
+    <% end %>
+<% else %>
+    <p>
+    </p>
+<% end %>
+
+<p>
+<a href="/posts/new?place_id=<%= @place.id %>">New post</a>
+</p>
+
+<p>
+<a href="/places">Back to all places</a>
+</p>
